@@ -1,0 +1,93 @@
+from PyQt6 import QtCore, QtGui, QtWidgets
+
+
+class Ui_loginWidget(object):
+    def setupUi(self, loginWidget):
+        loginWidget.setObjectName("loginWidget")
+        loginWidget.resize(400, 300)
+        self.loginLable = QtWidgets.QLabel(parent=loginWidget)
+        self.loginLable.setGeometry(QtCore.QRect(100, 50, 181, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.loginLable.setFont(font)
+        self.loginLable.setObjectName("loginLable")
+        self.usernameLine = QtWidgets.QLineEdit(parent=loginWidget)
+        self.usernameLine.setGeometry(QtCore.QRect(100, 110, 113, 20))
+        self.usernameLine.setText("")
+        self.usernameLine.setObjectName("usernameLine")
+        self.usernameLabel = QtWidgets.QLabel(parent=loginWidget)
+        self.usernameLabel.setGeometry(QtCore.QRect(100, 90, 47, 13))
+        self.usernameLabel.setObjectName("usernameLabel")
+        self.passwordLine = QtWidgets.QLineEdit(parent=loginWidget)
+        self.passwordLine.setGeometry(QtCore.QRect(100, 170, 113, 20))
+        self.passwordLine.setText("")
+        self.passwordLine.setObjectName("passwordLine")
+        self.passwordLabel = QtWidgets.QLabel(parent=loginWidget)
+        self.passwordLabel.setGeometry(QtCore.QRect(100, 150, 47, 13))
+        self.passwordLabel.setObjectName("passwordLabel")
+        self.loginButton = QtWidgets.QPushButton(parent=loginWidget)
+        self.loginButton.setGeometry(QtCore.QRect(100, 210, 75, 23))
+        self.loginButton.setObjectName("loginButton")
+        # self.signupButton = QtWidgets.QPushButton(parent=loginWidget)
+        # self.signupButton.setGeometry(QtCore.QRect(180, 210, 141, 23))
+        # self.signupButton.setObjectName("signupButton")
+        self.errorLabel = QtWidgets.QLabel(parent=loginWidget)
+        self.errorLabel.setGeometry(QtCore.QRect(100, 250, 200, 13))
+        font = QtGui.QFont()
+        font.setItalic(False)
+        font.setUnderline(False)
+        self.errorLabel.setFont(font)
+        self.errorLabel.setObjectName("errorLabel")
+
+        self.retranslateUi(loginWidget)
+        QtCore.QMetaObject.connectSlotsByName(loginWidget)
+
+    def retranslateUi(self, loginWidget):
+        _translate = QtCore.QCoreApplication.translate
+        loginWidget.setWindowTitle(_translate("loginWidget", "Form"))
+        self.loginLable.setText(_translate("loginWidget", "Войдите в систему"))
+        self.usernameLabel.setText(_translate("loginWidget", "Логин"))
+        self.passwordLabel.setText(_translate("loginWidget", "Пароль"))
+        self.loginButton.setText(_translate("loginWidget", "Войти"))
+        # self.signupButton.setText(_translate("loginWidget", "Зарегестрироваться"))
+        self.errorLabel.setText(_translate("loginWidget", "Ошибка"))
+
+
+class Ui_signupWidget(object):
+    def setupUi(self, signupWidget):
+        signupWidget.setObjectName("signupWidget")
+        signupWidget.resize(400, 300)
+        self.signupLabel = QtWidgets.QLabel(parent=signupWidget)
+        self.signupLabel.setGeometry(QtCore.QRect(100, 60, 191, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.signupLabel.setFont(font)
+        self.signupLabel.setObjectName("signupLabel")
+        self.usernameLable = QtWidgets.QLabel(parent=signupWidget)
+        self.usernameLable.setGeometry(QtCore.QRect(100, 100, 47, 13))
+        self.usernameLable.setObjectName("usernameLable")
+        self.usernameLine = QtWidgets.QLineEdit(parent=signupWidget)
+        self.usernameLine.setGeometry(QtCore.QRect(100, 120, 113, 20))
+        self.usernameLine.setObjectName("usernameLine")
+        self.passwordLabel = QtWidgets.QLabel(parent=signupWidget)
+        self.passwordLabel.setGeometry(QtCore.QRect(100, 160, 47, 13))
+        self.passwordLabel.setObjectName("passwordLabel")
+        self.passwordLine = QtWidgets.QLineEdit(parent=signupWidget)
+        self.passwordLine.setGeometry(QtCore.QRect(100, 180, 113, 20))
+        self.passwordLine.setObjectName("passwordLine")
+        self.signupButton = QtWidgets.QPushButton(parent=signupWidget)
+        self.signupButton.setGeometry(QtCore.QRect(100, 220, 151, 23))
+        self.signupButton.setObjectName("signupButton")
+
+        self.retranslateUi(signupWidget)
+        QtCore.QMetaObject.connectSlotsByName(signupWidget)
+
+    def retranslateUi(self, signupWidget):
+        _translate = QtCore.QCoreApplication.translate
+        signupWidget.setWindowTitle(_translate("signupWidget", "Form"))
+        self.signupLabel.setText(_translate("signupWidget", "Зарегистрируйтесь"))
+        self.usernameLable.setText(_translate("signupWidget", "Логин"))
+        self.passwordLabel.setText(_translate("signupWidget", "Пароль"))
+        self.signupButton.setText(_translate("signupWidget", "Зарегистрироваться"))
