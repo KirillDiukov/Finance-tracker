@@ -1,5 +1,6 @@
 import sys
-
+import numpy as np
+import matplotlib.pyplot as plt
 from ui import Ui_loginWidget, Ui_signupWidget
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget
 
@@ -56,8 +57,34 @@ class LoginWidget(QWidget, Ui_loginWidget):
             self.errorLabel.show()
 
 
+class Balance:
+    def __init__(self, balanceAmount):
+        self.balance = balanceAmount
+
+    def changeBalance(self, changeAmount, wasteOrIncome='+'):
+        if wasteOrIncome == '+':
+            self.balance += changeAmount
+        else:
+            self.balance -= changeAmount
+
+
+class BalanceChange(Balance):
+    def __init__(self, changeAmount, wasteOrIncome='+'):
+        self.changeAmount = changeAmount
+        self.wasteOrIncome = wasteOrIncome
+        self.changeBalance(changeAmount, wasteOrIncome)
+
+
+class Diagram:
+    def __init__(self, categoriesList, categoriesAmount):
+        fig = plt.figure(figsize=(6, 4))
+        ax = fig.add_subplot()
+        ax.pie(categoriesList, labels=categoriesAmount)
+
+
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
